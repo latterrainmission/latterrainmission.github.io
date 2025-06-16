@@ -43,7 +43,7 @@
     </div>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#leadership">Leadership</a></li>
+      <li><a href="#event">Upcoming Events</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -63,29 +63,56 @@
       </div>
     </section>
 
-    <section id="leadership" class="content-section">
-      <div class="section-container">
-        <h2><span>Our Leadership</span></h2>
-        <p>Meet the passionate individuals who shepherd our church with wisdom and compassion.</p>
-        <div class="leaders-grid">
-          <div class="leader-card">
-            <div class="leader-image">
-              <img src="images/pastor.jpg" alt="Pastor">
-            </div>
-            <h3>Pastor L.L Mapetere</h3>
-            <p class="position">National Overseer</p>
-          </div>
-          <div class="leader-card">
-            <div class="leader-image">
-              <img src="images/deacon.jpg" alt="Deacon">
-            </div>
-            <h3>Pastor U.G Mapetere</h3>
-            <p class="position">Music Chairperson</p>
-          </div>
+    <!-- Replace leadership section with this -->
+<section id="events" class="content-section">
+  <div class="section-container">
+    <h2><span>Upcoming Events</span></h2>
+    
+    <!-- Current Year Events (Default View) -->
+    <div id="current-year-events" class="events-view active-view">
+      <div class="events-list">
+        <!-- Events will be populated by JavaScript -->
+      </div>
+      <button id="show-calendar-btn" class="cta-button">View 2025 Calendar</button>
+    </div>
+    
+    <!-- Year Calendar View -->
+    <div id="year-calendar-view" class="events-view">
+      <div class="year-header">
+        <h3 id="displayed-year">2024</h3>
+        <div class="year-nav">
+          <button id="prev-year">&lt;</button>
+          <button id="next-year">&gt;</button>
         </div>
       </div>
-    </section>
-
+      <div class="months-grid">
+        <!-- Months will be populated by JavaScript -->
+      </div>
+    </div>
+    
+    <!-- Month Details View -->
+    <div id="month-details-view" class="events-view">
+      <button id="back-to-calendar" class="back-button">← Back to Calendar</button>
+      <h3 id="month-name">January 2024</h3>
+      <div class="days-grid">
+        <!-- Days will be populated by JavaScript -->
+      </div>
+    </div>
+    
+    <!-- Event Details View -->
+    <div id="event-details-view" class="events-view">
+      <button id="back-to-month" class="back-button">← Back to Month</button>
+      <h3 id="event-title">Event Title</h3>
+      <div class="event-meta">
+        <p><strong>Date:</strong> <span id="event-date">January 1, 2024</span></p>
+        <p><strong>Time:</strong> <span id="event-time">10:00 AM - 2:00 PM</span></p>
+        <p><strong>Venue:</strong> <span id="event-venue">Main Church Hall</span></p>
+      </div>
+      <p id="event-description">Event description goes here...</p>
+    </div>
+  </div>
+  
+</section>
     <section id="gallery" class="content-section alt-bg">
       <div class="section-container">
         <h2><span>Church Gallery</span></h2>

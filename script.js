@@ -9,6 +9,202 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+  // Sample data - Replace with Python backend data
+  const eventsData = {
+    "2024": {
+      "June": {
+        "15": [
+          {
+            title: "Youth Conference",
+            time: "9:00 AM - 4:00 PM",
+            venue: "Main Hall",
+            description: "Annual youth gathering with workshops and worship"
+          }
+        ],
+        "22": [
+          {
+            title: "Bible Study",
+            time: "6:00 PM - 7:30 PM",
+            venue: "Room 5",
+            description: "Study of the Book of Romans"
+          }
+        ]
+      },
+      "July": {
+        "7": [
+          {
+            title: "Sunday Service",
+            time: "10:00 AM - 12:00 PM",
+            venue: "Sanctuary",
+            description: "Regular Sunday worship service"
+          }
+        ]
+      }
+    },
+    "2025": {
+      "January": {
+        "12": [
+          {
+            title: "New Year Service",
+            time: "10:00 AM - 1:00 PM",
+            venue: "Sanctuary",
+            description: "First service of the new year"
+          }
+        ]
+      }
+    }
+  };
+
+  // DOM Elements
+  const views = {
+    currentYear: document.getElementById('current-year-events'),
+    yearCalendar: document.getElementById('year-calendar-view'),
+    monthDetails: document.getElementById('month-details-view'),
+    eventDetails: document.getElementById('event-details-view')
+  };
+
+  const yearDisplay = document.getElementById('displayed-year');
+  const monthNameDisplay = document.getElementById('month-name');
+  const eventTitle = document.getElementById('event-title');
+  const eventDate = document.getElementById('event-date');
+  const eventTime = document.getElementById('event-time');
+  const eventVenue = document.getElementById('event-venue');
+  const eventDescription = document.getElementById('event-description');
+
+  let currentYear = new Date().getFullYear();
+  let currentMonth = '';
+  
+  // Initialize
+  renderCurrentYearEvents();
+  renderYearCalendar(currentYear);
+
+  // Event Listeners
+  document.getElementById('show-calendar-btn').addEventListener('click', () => {
+    switchView(views.currentYear, views.yearCalendar);
+  });
+
+  document.getElementById('prev-year').addEventListener('click', () => {
+    currentYear--;
+    renderYearCalendar(currentYear);
+  });
+
+  document.getElementById('next-year').addEventListener('click', () => {
+    currentYear++;
+    renderYearCalendar(currentYear);
+  });
+
+  document.getElementById('back-to-calendar').addEventListener('click', () => {
+    switchView(views.monthDetails, views.yearCalendar);
+  });
+
+  document.getElementById('back-to-month').addEventListener('click', () => {
+    switchView(views.eventDetails, views.monthDetails);
+  });
+
+  // Functions
+  function switchView(fromView, toView) {
+    fromView.classList.remove('active-view');
+    setTimeout(() => {
+      toView.classList.add('active-view');
+    }, 300);
+  }
+
+  function renderCurrentYearEvents() {
+    const eventsList = document.querySelector('.events-list');
+    eventsList.innerHTML = '';
+    
+    const yearEvents = eventsData[currentYear] || {};
+    let hasEvents = false;
+    
+    for (const month in yearEvents) {
+      for (const day in yearEvents[month]) {
+        yearEvents[month][day].forEach(event => {
+          hasEvents = true;
+          const eventElement = document.createElement('div');
+          eventElement.className = 'event-item';
+          eventElement.innerHTML = `
+            <h4>${event.title}</h4>
+            <p>${month} ${day}, ${currentYear} • ${event.time}</p>
+            <p>${event.venue}</p>
+          `;
+          eventElement.addEventListener('click', () => {
+            displayEventDetails(event, `${month} ${day}, ${currentYear}`);
+            switchView(views.currentYear, views.eventDetails);
+          });
+          eventsList.appendChild(eventElement);
+        });
+      }
+    }
+    
+    if (!hasEvents) {
+      eventsList.innerHTML = '<p>No upcoming events scheduled for this year.</p>';
+    }
+  }
+
+  function renderYearCalendar(year) {
+    yearDisplay.textContent = year;
+    const monthsGrid = document.querySelector('.months-grid');
+    monthsGrid.innerHTML = '';
+    
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 
+                   'July', 'August', 'September', 'October', 'November', 'December'];
+    
+    months.forEach(month => {
+      const monthCell = document.createElement('div');
+      monthCell.className = 'month-cell';
+      monthCell.textContent = month;
+      
+      if (eventsData[year] && eventsData[year][month]) {
+        monthCell.classList.add('has-events');
+      }
+      
+      monthCell.addEventListener('click', () => {
+        currentMonth = month;
+        monthNameDisplay.textContent = `${month} ${year}`;
+        renderMonthDetails(year, month);
+        switchView(views.yearCalendar, views.monthDetails);
+      });
+      
+      monthsGrid.appendChild(monthCell);
+    });
+  }
+
+  function renderMonthDetails(year, month) {
+    const daysGrid = document.querySelector('.days-grid');
+    daysGrid.innerHTML = '';
+    
+    // Create day cells (simplified - would need proper date logic)
+    for (let i = 1; i <= 31; i++) {
+      const dayCell = document.createElement('div');
+      dayCell.className = 'day-cell';
+      dayCell.textContent = i;
+      
+      if (eventsData[year] && eventsData[year][month] && eventsData[year][month][i]) {
+        dayCell.classList.add('has-events');
+        dayCell.addEventListener('click', () => {
+          displayEventDetails(
+            eventsData[year][month][i][0], 
+            `${month} ${i}, ${year}`
+          );
+          switchView(views.monthDetails, views.eventDetails);
+        });
+      }
+      
+      daysGrid.appendChild(dayCell);
+    }
+  }
+
+  function displayEventDetails(event, dateString) {
+    eventTitle.textContent = event.title;
+    eventDate.textContent = dateString;
+    eventTime.textContent = event.time;
+    eventVenue.textContent = event.venue;
+    eventDescription.textContent = event.description;
+  }
+
+
+
+
   // Scroll animation for sections
   const sections = document.querySelectorAll('.section, .content-section');
   
