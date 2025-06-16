@@ -108,13 +108,40 @@ body {
     height: 50%;       /* Flexible height */
 }
 
-/* Optional responsive version */
-.logo img {
-    max-width: 50%;    /* Scales down if container is small */
-    max-height: 80%;   /* Never taller than this */
-    width: 50%;        /* Flexible width */
-    height: 50%;       /* Flexible height */
 
+.logo img {
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove extra space */
+}
+
+/* Logo container */
+.logo {
+  flex: 0 0 auto; /* Don't grow or shrink */
+}
+/* Desktop sizing */
+@media (min-width: 769px) {
+  .logo img {
+    width: 120px; /* Fixed size for laptops */
+    max-width: none; /* Override any max-width */
+  }
+}
+/* Mobile sizing */
+@media (max-width: 768px) {
+  .logo img {
+    width: 80px; /* Smaller for mobile */
+  }
+}
+
+/* Optional: For very large screens */
+@media (min-width: 1200px) {
+  .logo img {
+    width: 140px;
+  }
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
 }
 
 .nav-links {
@@ -165,11 +192,11 @@ body {
 }
 
 .sticky-nav a:visited {
-    color: var(--white);
+    color: khaki;
 }
 
 .sticky-nav a.active {
-    background-color: transparent;
+    background-color: grey;
     color: white;
 }
 
