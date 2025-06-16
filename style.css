@@ -104,16 +104,16 @@ body {
 .logo-container img {
      max-width: 100%;    /* Scales down if container is small */
     max-height: 80%;   /* Never taller than this */
-    width: auto;        /* Flexible width */
-    height: auto;       /* Flexible height */
+    width: 50%;        /* Flexible width */
+    height: 50%;       /* Flexible height */
 }
 
 /* Optional responsive version */
 .logo-cntainer img {
     max-width: 100%;    /* Scales down if container is small */
     max-height: 80%;   /* Never taller than this */
-    width: auto;        /* Flexible width */
-    height: auto;       /* Flexible height */
+    width: 50%;        /* Flexible width */
+    height: 50%;       /* Flexible height */
 
 }
 
