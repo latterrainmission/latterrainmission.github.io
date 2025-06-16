@@ -102,7 +102,7 @@ body {
 
 /* Logo sizing */
 .logo-container img {
-     max-width: 100%;    /* Scales down if container is small */
+     max-width: 50%;    /* Scales down if container is small */
     max-height: 80%;   /* Never taller than this */
     width: 50%;        /* Flexible width */
     height: 50%;       /* Flexible height */
@@ -110,7 +110,7 @@ body {
 
 /* Optional responsive version */
 .logo-cntainer img {
-    max-width: 100%;    /* Scales down if container is small */
+    max-width: 50%;    /* Scales down if container is small */
     max-height: 80%;   /* Never taller than this */
     width: 50%;        /* Flexible width */
     height: 50%;       /* Flexible height */
