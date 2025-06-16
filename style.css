@@ -109,7 +109,7 @@ body {
 }
 
 /* Optional responsive version */
-.logo-cntainer img {
+.logo img {
     max-width: 50%;    /* Scales down if container is small */
     max-height: 80%;   /* Never taller than this */
     width: 50%;        /* Flexible width */
