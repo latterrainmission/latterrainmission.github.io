@@ -194,6 +194,73 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
+
+  document.addEventListener('DOMContentLoaded', () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+
+  gsap.from(".hero-content", {
+    opacity: 0,
+    y: 50,
+    duration: 1.2,
+    ease: "power3.out"
+  });
+
+
+  document.querySelectorAll(".content-section").forEach(section => {
+    gsap.from(section, {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: section,
+        start: "top 85%",
+        toggleActions: "play none none none"
+      }
+    });
+  });
+
+ 
+  gsap.from(".gallery-item", {
+    opacity: 0,
+    scale: 0.95,
+    stagger: 0.2,
+    duration: 0.8,
+    ease: "back.out(1.7)",
+    scrollTrigger: {
+      trigger: ".gallery-grid",
+      start: "top 80%",
+      toggleActions: "play none none none"
+    }
+  });
+
+  
+  gsap.from(".content-section h2 span", {
+    y: 40,
+    opacity: 0,
+    duration: 1,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".content-section h2 span",
+      start: "top 90%",
+      toggleActions: "play none none none"
+    }
+  });
+
+  
+  gsap.from(".main-nav", {
+    y: -80,
+    duration: 0.8,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".main-nav",
+      start: "top top",
+      toggleActions: "play none none none"
+    }
+  });
+});
+
   function displayEventDetails(event, dateString) {
     eventTitle.textContent = event.title;
     eventDate.textContent = dateString;
