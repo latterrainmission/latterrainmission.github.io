@@ -48,7 +48,6 @@
       <img src="images/latterlogo.png" alt="Latter Rain Mission Logo">
     </div>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#events">Upcoming Events</a></li>
     </ul>
@@ -143,7 +142,7 @@
 
 
   <section id="gallery" class="content-section">
-    <div class="section-container gsap-animated">
+    <div id = "gallery-view" class="section-container gsap-animated">
         <h2><span>Church Gallery</span></h2>
         <div class="gallery-grid">
           <div class="gallery-item">
@@ -160,39 +159,49 @@
 
 
   <section id="events" class="content-section fade-in">
-    <div class="section-container gsap-animated fade-in">
-      <h2 style="text-align: center !important;"><span>Upcoming Events</span></h2>
-      <div id="current-year-events" class="events-view active-view">
-        <div class="events-list"></div>
-        <button id="show-calendar-btn" class="cta-button">View 2025 Calendar</button>
-      </div>
-      <div id="year-calendar-view" class="events-view">
-        <div class="year-header">
-          <h3 id="displayed-year">2024</h3>
-          <div class="year-nav">
-            <button id="prev-year">&lt;</button>
-            <button id="next-year">&gt;</button>
-          </div>
-        </div>
-        <div class="months-grid"></div>
-      </div>
-      <div id="month-details-view" class="events-view">
-        <button id="back-to-calendar" class="back-button">&larr; Back to Calendar</button>
-        <h3 id="month-name">January 2024</h3>
-        <div class="days-grid"></div>
-      </div>
-      <div id="event-details-view" class="events-view">
-        <button id="back-to-month" class="back-button">&larr; Back to Month</button>
-        <h3 id="event-title">Event Title</h3>
-        <div class="event-meta">
-          <p><strong>Date:</strong> <span id="event-date">January 1, 2024</span></p>
-          <p><strong>Time:</strong> <span id="event-time">10:00 AM - 2:00 PM</span></p>
-          <p><strong>Venue:</strong> <span id="event-venue">Main Church Hall</span></p>
-        </div>
-        <p id="event-description">Event description goes here...</p>
-      </div>
+  <div class="section-container gsap-animated fade-in">
+    <h2 style="text-align: center !important;">
+      <span>Upcoming Events</span>
+    </h2>
+
+    <div id="current-year-events" class="events-view active-view">
+      <div class="events-list"></div>
+      <button id="show-calendar-btn" class="cta-button">View 2025 Calendar</button>
     </div>
-  </section>
+
+    <div id="year-calendar-view" class="events-view">
+      <div class="year-header">
+        <h3 id="displayed-year">2024</h3>
+        <div class="year-nav">
+          <button id="prev-year">&lt;</button>
+          <button id="next-year">&gt;</button>
+        </div>
+      </div>
+      <div class="months-grid"></div>
+    </div>
+
+    <div id="month-details-view" class="events-view">
+      <button id="back-to-calendar" class="back-button">&larr; Back to Calendar</button>
+      <h3 id="month-name">January 2024</h3>
+      <div class="days-grid"></div>
+    </div>
+
+    <div id="event-details-view" class="events-view">
+      <button id="back-to-month" class="back-button">&larr; Back to Month</button>
+      <h3 id="event-title">Event Title</h3>
+
+      <div id="event-final-details-view" class="event-meta">
+        <p><strong>Date:</strong> <span id="event-date">August 8 , 2025</span></p>
+        <p><strong>Time:</strong> <span id="event-time">10:00 AM - 2:00 PM</span></p>
+        <p><strong>Venue:</strong> <span id="event-venue">Chomunanga Faith Home</span></p>
+      </div>
+
+      <p id="event-description">Event description goes here...</p>
+    </div>
+    
+  </div>
+</section>
+
 
 </main>
 
