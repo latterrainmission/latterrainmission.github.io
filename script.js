@@ -402,3 +402,93 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.info-card');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible', 'gsap-animated', 'bounce');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  cards.forEach(card => observer.observe(card));
+});
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.utils.toArray(".gsap-card").forEach((card, index) => {
+const direction = card.classList.contains("left") ? -100 : 100;
+
+gsap.fromTo(card,
+  {
+    opacity: 0,
+    x: direction,
+    scale: 0.95
+  },
+  {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    duration: 1.5,
+    ease: "bounce.out",
+    scrollTrigger: {
+      trigger: card,
+      start: "top 80%",
+      toggleActions: "play none none none"
+    }
+  });
+});
+
+gsap.from(".gsap-card", {
+  scrollTrigger: {
+    trigger: ".gsap-card",
+    start: "top 80%",
+  },
+  opacity: 0,
+  y: 80,
+  duration: 1.2,
+  ease: "bounce.out",
+  stagger: 0.3,
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.fromTo(".info-card", 
+    { scale: 1 }, 
+    { 
+      scale: 1.1, 
+      duration: 0.4, 
+      yoyo: true, 
+      repeat: 1, 
+      ease: "power1.inOut" 
+    }
+  );
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll('.info-card');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        gsap.fromTo(entry.target, 
+          { scale: 1 }, 
+          { scale: 1.15, duration: 0.3, repeat: 1, yoyo: true, ease: "power1.inOut" }
+        );
+        entry.target.classList.add('gsap-animated');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  cards.forEach(card => observer.observe(card));
+});
+
+
+

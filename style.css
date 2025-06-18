@@ -519,108 +519,61 @@ footer {
     }
 }
 
-
-/* ===== Hero Section ===== */
-.hero-banner {
-  position: relative;
-  overflow: hidden;
-}
-/* ===== Floating Info Cards ===== */
-.info-card {
-  opacity: 0; /* Start hidden for GSAP animation */
-  margin: 3rem 0;
-  padding: 2rem;
+/* Responsive adjustments for the hero banner */    
+ .info-card {
+  display:grid;
+  background: linear-gradient(to bottom right, #e6edf2, #f5f2e5);
   border-radius: 25px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-  position: relative;
-  overflow: hidden;
-  transform: scale(0.95);
-  transition: transform 0.4s ease;
-  max-width: 90%;
+  border: 8px solid rgba(0, 0, 0, 0.05); /* more practical than 0.8cm */
+  padding: 1.5rem;
+  margin: 2rem 0;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  max-width: 600px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: var(--transition);
+  
+
+}
+.info-card.bounce {
+  animation: heartbeat 0.8s ease-in-out 1 !important;
+
+
 }
 
-/* Left Cards - Greyish Blue */
-.info-card.left {
-  background: linear-gradient(145deg, #f8fafc, #e6f0f8);
-  border-left: 12px solid #6b8cae; /* Soft grey-blue */
-  margin-right: auto;
-  margin-left: 0;
+.info-card.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Right Cards - Soft Khaki */
-.info-card.right {
-  background: linear-gradient(145deg, #f9f8f4, #f0eee4);
-  border-right: 12px solid #a3b18a; /* Soft khaki */
-  margin-left: auto;
-  margin-right: 0;
-}
 
-/* Thick Edge with Fade Effect */
-.info-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 0.8cm; /* Exact thickness requested */
-  background: linear-gradient(90deg, 
-    rgba(107,140,174,0.8) 0%, 
-    rgba(107,140,174,0.4) 50%, 
-    transparent 100%);
-}
+  .info-card.left {
+    margin-left: 0;
+    margin-right: auto;
+  }
 
-.info-card.right::before {
-  background: linear-gradient(90deg, 
-    transparent 0%, 
-    rgba(163,177,138,0.4) 50%, 
-    rgba(163,177,138,0.8) 100%);
-}
+  .info-card.right {
+    margin-left: auto;
+    margin-right: 0;
+  }
 
-/* Content Styling */
-.info-card h4 {
-  color: #2d3748;
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-  position: relative;
-  padding-bottom: 0.5rem;
-}
+  h4 {
+    margin-top: 0;
+    font-weight: bold;
+    color: #3a3a3a;
+  }
 
-.info-card h4::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 50px;
-  height: 3px;
-  background: #6b8cae;
-}
+  .gsap-card p {
+    color: #444;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
 
-.info-card.right h4::after {
-  background: #a3b18a;
-}
+  @media screen and (max-width: 768px) {
+    .info-card.left,
+    .info-card.right {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 
-.info-card p {
-  color: #4a5568;
-  line-height: 1.7;
-  font-size: 1.1rem;
-}
-
-/* Curved Corners */
-.info-card.left {
-  border-radius: 0 25px 25px 25px;
-}
-
-.info-card.right {
-  border-radius: 25px 0 25px 25px;
-}
-
-/* Animation via GSAP */
-.gsap-card {
-  /* GSAP will animate these properties */
-  will-change: transform, opacity;
-}
-
-/* Hover Effect */
-.info-card:hover {
-  transform: scale(0.98) translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-}

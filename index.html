@@ -21,6 +21,8 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://kit.fontawesome.com/4c84f3af73.js" crossorigin="anonymous"></script>  <!-- GSAP Core -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
   <!-- ScrollTrigger Plugin -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
@@ -56,69 +58,106 @@
 
 <!-- MAIN CONTENT -->
 <main class="main-content">
-
   <section id="about" class="content-section alt-bg fade-in">
-  <div class="section-container">
-    <h2><span>About Our Church</span></h2>
-    <div class="section-content">
-      <div class="text-content">
-        <p>
-          Welcome to Latter Rain Mission (Zimbabwe), a vibrant community of believers dedicated to spiritual growth, worship, and service. Our mission is to nurture disciples of Christ through biblical teaching, fellowship, and outreach programs.
-        </p>
-
-        <h3>Who We Are</h3>
-        <p>
-          We are a faith-based community rooted in biblical teachings, striving to create a welcoming space for people of all ages to worship, learn, and grow together in Christ.
-        </p>
-
-        <h3>What We Do</h3>
-
-        <!-- Info Card 1 -->
-        <div class="info-card left gsap-card">
-          <h4>1. Youth Programs & Empowerment</h4>
+    <div class="section-container">
+      <h2><span>About Our Church</span></h2>
+      <div class="section-content ">
+        <div class="text-content ">
           <p>
-            We believe in nurturing the next generation of leaders. Through dynamic <strong>youth programs</strong>, we encourage young people to gather, share insights, and grow in faith. From Bible studies to mentorship and creative arts, we provide a supportive environment for spiritual and social growth.
+            Welcome to Latter Rain Mission (Zimbabwe), a vibrant community of believers dedicated to spiritual growth, worship, and service. Our mission is to nurture disciples of Christ through biblical teaching, fellowship, and outreach programs.
           </p>
+
+          <div class="info-card alt-bg fade-in right gsap-animated bounce">
+            <h4>Our Vision</h4>
+            <p>
+              To be a beacon of hope and love in our communities, empowering individuals to live out their faith boldly and compassionately.
+            </p>
+          </div>
+
+          <div class="info-card left gsap-animated alt-bg fade-in">
+            <h4>Who We Are</h3>
+            <p>
+              We are a faith-based community rooted in biblical teachings, striving to create a welcoming space for people of all ages to worship, learn, and grow together in Christ.
+            </p>
+          </div>
+
+          <div class="info-card right gsap-animated alt-bg fade-in">
+            <h4>Our Beliefs</h4>
+            <p>
+              We believe in the transformative power of the Gospel, the importance of community, and the call to serve others with love and humility.
+            </p>
+          </div>
+
+          <div class="info-card left gsap-animated alt-bg fade-in">
+            <h4>What We Do</h3>
+            <h4>Youth Programs & Empowerment</h4>
+            <p>
+              We believe in nurturing the next generation of leaders. Through dynamic <strong>youth programs</strong>, we encourage young people to gather, share insights, and grow in faith. From Bible studies to mentorship and creative arts, we provide a supportive environment for spiritual and social growth.
+            </p>
+          </div>
+
+          <div class="info-card right gsap-animated alt-bg fade-in">
+            <h4>Multi-Congregational Fellowship</h4>
+            <p>
+              Our church family extends across Zimbabwe, with <strong>multiple congregations</strong> in different regions. We hold joint services, conferences, and outreach events to strengthen our unity in Christ.
+            </p>
+          </div>
+
+          <div class="info-card left gsap-animated alt-bg fade-in">
+            <h4>Love in Action</h4>
+            <p>
+              We demonstrate God’s love through <strong>community outreach</strong>—feeding the hungry, supporting vulnerable families, and visiting the sick—to make a tangible difference in people’s lives.
+            </p>
+          </div>
+
+          <div class="info-card right gsap-animated alt-bg fade-in">
+            <h4>Worship & Discipleship</h4>
+            <p>
+              At our core is <strong>authentic worship</strong> and <strong>discipleship</strong>. Through uplifting services and small-group fellowships, we help believers deepen their relationship with God.
+            </p>
+          </div>
+
+          <div class="info-card left gsap-animated alt-bg fade-in">
+            <h4>Our Mission</h3>
+            <p>
+              To <strong>inspire hope, share the Gospel, and build a Christ-centered community</strong> where everyone feels valued and empowered to fulfill God’s purpose.
+            </p>
+          </div>
+
+          <div class="info-card right gsap-animated alt-bg fade-in">
+            <h4>Our Values</h3>
+            <ul>
+              <li><strong>Faith:</strong> Trusting in God’s promises and guidance.</li>
+              <li><strong>Community:</strong> Building meaningful relationships with one another.</li>
+              <li><strong>Service:</strong> Serving others with love and humility.</li>
+              <li><strong>Integrity:</strong> Upholding biblical principles in all we do.</li>
+            </ul>
+            <p>
+              <strong>Join us</strong> as we journey together in faith, growing in love and service to our communities and the world.
+            </p>
+          </div>
+        </div> <!-- .text-content -->
+      </div> <!-- .section-content -->
+    </div> <!-- .section-container -->
+  </section>
+
+
+
+  <section id="gallery" class="content-section">
+    <div class="section-container">
+      <h2><span>Church Gallery</span></h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="images/conference.jpg" alt="Sunday Service">
+          <div class="gallery-caption">Sunday Service</div>
         </div>
-
-        <!-- Info Card 2 -->
-        <div class="info-card right gsap-card">
-          <h4>2. Multi-Congregational Fellowship</h4>
-          <p>
-            Our church family extends across Zimbabwe, with <strong>multiple congregations</strong> in different regions. We hold joint services, conferences, and outreach events to strengthen our unity in Christ.
-          </p>
+        <div class="gallery-item">
+          <img src="images/president.jpg" alt="Fellowship Gathering">
+          <div class="gallery-caption">Fellowship</div>
         </div>
-
-        <!-- Info Card 3 -->
-        <div class="info-card left gsap-card">
-          <h4>3. Love in Action</h4>
-          <p>
-            We demonstrate God’s love through <strong>community outreach</strong>—feeding the hungry, supporting vulnerable families, and visiting the sick—to make a tangible difference in people’s lives.
-          </p>
-        </div>
-
-        <!-- Info Card 4 -->
-        <div class="info-card right gsap-card">
-          <h4>4. Worship & Discipleship</h4>
-          <p>
-            At our core is <strong>authentic worship</strong> and <strong>discipleship</strong>. Through uplifting services and small-group fellowships, we help believers deepen their relationship with God.
-          </p>
-        </div>
-
-        <h3>Our Mission</h3>
-        <p>
-          To <strong>inspire hope, share the Gospel, and build a Christ-centered community</strong> where everyone feels valued and empowered to fulfill God’s purpose.
-        </p>
-
-        <h3>Join Us!</h3>
-        <p>
-          Whether you’re seeking a spiritual home or a place to serve, you’re welcome here. <strong>Come as you are—let’s grow in faith together!</strong>
-        </p>
       </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <section id="events" class="content-section fade-in">
     <div class="section-container">
@@ -151,22 +190,6 @@
           <p><strong>Venue:</strong> <span id="event-venue">Main Church Hall</span></p>
         </div>
         <p id="event-description">Event description goes here...</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="gallery" class="content-section">
-    <div class="section-container">
-      <h2><span>Church Gallery</span></h2>
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <img src="images/conference.jpg" alt="Sunday Service">
-          <div class="gallery-caption">Sunday Service</div>
-        </div>
-        <div class="gallery-item">
-          <img src="images/president.jpg" alt="Fellowship Gathering">
-          <div class="gallery-caption">Fellowship</div>
-        </div>
       </div>
     </div>
   </section>
